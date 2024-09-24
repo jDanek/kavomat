@@ -26,13 +26,13 @@ public class Main {
                 new InfiniteMagazineComponent(ResourceEnum.WATER),
 
                 //new MagazineComponent(ResourceEnum.WATER, 400),
-                new MagazineComponent(ResourceEnum.MILK, 150),
-                new MagazineComponent(ResourceEnum.COFFEE, 300),
+                new StorageComponent(ResourceEnum.MILK, 150),
+                new StorageComponent(ResourceEnum.COFFEE, 300),
 
                 // par dalsich zasobniku oproti prikladu 1
-                new MagazineComponent(ResourceEnum.SUGAR, 100),
-                new MagazineComponent(ResourceEnum.CHOCOLATE, 100),
-                new MagazineComponent(ResourceEnum.TEA, 100)
+                new StorageComponent(ResourceEnum.SUGAR, 100),
+                new StorageComponent(ResourceEnum.CHOCOLATE, 100),
+                new StorageComponent(ResourceEnum.TEA, 100)
         );
 
         // nastaveni receptu pro jednotlive napoje

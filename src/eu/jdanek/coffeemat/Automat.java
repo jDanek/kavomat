@@ -3,7 +3,7 @@ package eu.jdanek.coffeemat;
 import eu.jdanek.coffeemat.component.CoinDispenserComponent;
 import eu.jdanek.coffeemat.component.CoinReceiverComponent;
 import eu.jdanek.coffeemat.component.DisplayComponent;
-import eu.jdanek.coffeemat.component.MagazineComponent;
+import eu.jdanek.coffeemat.component.StorageComponent;
 import eu.jdanek.coffeemat.enums.ResourceEnum;
 import eu.jdanek.coffeemat.util.DrinkMenuRenderer;
 
@@ -14,7 +14,7 @@ public class Automat {
     private boolean debug = false;
 
     // components
-    private final HashMap<ResourceEnum, MagazineComponent> magazines = new HashMap<>();
+    private final HashMap<ResourceEnum, StorageComponent> magazines = new HashMap<>();
     private final DisplayComponent display;
     private final CoinReceiverComponent coinReceiver;
     private final CoinDispenserComponent coinDispenser;
@@ -39,8 +39,8 @@ public class Automat {
     /**
      * Nastaveni zasobniku automatu
      */
-    public void setMagazines(MagazineComponent... magazines) {
-        for (MagazineComponent magazine : magazines) {
+    public void setMagazines(StorageComponent... magazines) {
+        for (StorageComponent magazine : magazines) {
             this.magazines.put(magazine.getResourceType(), magazine);
         }
     }
@@ -219,7 +219,7 @@ public class Automat {
      * Doplneni vsech zasobniku surovin
      */
     private void refillResources() {
-        for (MagazineComponent magazine : magazines.values()) {
+        for (StorageComponent magazine : magazines.values()) {
             magazine.refill();
         }
     }
@@ -228,7 +228,7 @@ public class Automat {
      * Vypis stav zasobniku
      */
     private void report() {
-        for (MagazineComponent magazine : magazines.values()) {
+        for (StorageComponent magazine : magazines.values()) {
             this.display.show(magazine.getResourceType() + ": " + magazine.getAmount());
         }
     }

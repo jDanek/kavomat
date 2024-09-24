@@ -5,14 +5,14 @@ import eu.jdanek.coffeemat.enums.ResourceEnum;
 /**
  * Trida zasobniku surovin
  */
-public class MagazineComponent {
+public class StorageComponent {
 
     private final ResourceEnum resourceType;
 
     private int capacity = 0; // celkova kapacita zasobniku
     private int amount = 0; // aktualni zasoba
 
-    public MagazineComponent(ResourceEnum resourceType, int capacity) {
+    public StorageComponent(ResourceEnum resourceType, int capacity) {
         this.resourceType = resourceType;
         this.capacity = capacity;
     }

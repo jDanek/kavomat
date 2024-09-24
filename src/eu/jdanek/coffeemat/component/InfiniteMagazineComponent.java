@@ -5,7 +5,7 @@ import eu.jdanek.coffeemat.enums.ResourceEnum;
 /**
  * Trida zasobniku surovin
  */
-public class InfiniteMagazineComponent extends MagazineComponent {
+public class InfiniteMagazineComponent extends StorageComponent {
 
     public InfiniteMagazineComponent(ResourceEnum resourceType) {
         super(resourceType, 999999);
