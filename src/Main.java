@@ -9,15 +9,7 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) {
 
-        DisplayComponent displayComponent = new DisplayComponent();
-
-        // vytvoření instance automatu
-        Automat automat = new Automat(
-                displayComponent, // komponent pro zobrazování informaci
-                new CoinReceiverComponent(displayComponent, ValidCoinEnum.getEnumSet()), // komponent pro vkladani minci
-                new CoinDispenserComponent(displayComponent, ValidCoinEnum.getEnumSet()), // komponent pro vydavani minci
-                true // debug rezim
-        );
+        Automat automat = getAutomat();
 
         // nastaveni zasobniku surovin
         automat.setMagazines(
@@ -74,5 +66,18 @@ public class Main {
 
         // spustení automatu po inicializaci
         automat.start();
+    }
+
+    private static Automat getAutomat() {
+        DisplayComponent displayComponent = new DisplayComponent();
+
+        // vytvoření instance automatu
+        Automat automat = new Automat(
+                displayComponent, // komponent pro zobrazování informaci
+                new CoinReceiverComponent(displayComponent, ValidCoinEnum.getEnumSet()), // komponent pro vkladani minci
+                new CoinDispenserComponent(displayComponent, ValidCoinEnum.getEnumSet()), // komponent pro vydavani minci
+                true // debug rezim
+        );
+        return automat;
     }
 }

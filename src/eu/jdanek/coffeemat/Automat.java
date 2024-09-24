@@ -11,8 +11,6 @@ import java.util.*;
 
 public class Automat {
 
-    private boolean debug = false;
-
     // components
     private final HashMap<ResourceEnum, StorageComponent> magazines = new HashMap<>();
     private final DisplayComponent display;
@@ -31,7 +29,6 @@ public class Automat {
         this.display = display;
         this.coinReceiver = coinReceiver;
         this.coinDispenser = coinDispenser;
-        this.debug = debug;
 
         this.display.setDebug(debug);
     }
