@@ -15,7 +15,7 @@ public class Main {
         automat.setMagazines(
                 // dalsi napad oproti prikladu 1
                 // nekonecny zasobnik vody -> napr. automat pripojeny k vode
-                new InfiniteMagazineComponent(ResourceEnum.WATER),
+                new InfiniteStorageComponent(ResourceEnum.WATER),
 
                 //new MagazineComponent(ResourceEnum.WATER, 400),
                 new StorageComponent(ResourceEnum.MILK, 150),
